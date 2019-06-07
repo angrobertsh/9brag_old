@@ -1,4 +1,4 @@
-class Meme < ActiveRecord::Base
+class Meme < ApplicationRecord
   validates :url, :title, presence: true
 
   include Votable

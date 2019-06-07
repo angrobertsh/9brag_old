@@ -8,11 +8,8 @@ class MemeIndex extends React.Component{
     super(props);
     this.indexMemes = this.indexMemes.bind(this);
     this.infScrollMemes = this.infScrollMemes.bind(this);
-    // this.matchTags = this.matchTags.bind(this);
-  }
-
-  componentDidUpdate(){
     document.addEventListener('scroll', this.infScrollMemes);
+    // this.matchTags = this.matchTags.bind(this);
   }
 
   componentWillUnmount(){
@@ -20,18 +17,18 @@ class MemeIndex extends React.Component{
   }
 
   infScrollMemes(){
-      if (document.body.scrollHeight == (document.body.scrollTop + window.innerHeight)) {
-        if(this.props.memes.length !== 0){
-          const tag = this.props.params.tags;
-          const hotOrFresh = this.props.location.pathname;
-          const lastMemeId = parseInt(Object.keys(this.props.memes[this.props.memes.length-1])[0]);
-          if(tag === undefined){
-            this.props.requestAllMemes(hotOrFresh, lastMemeId);
-          } else {
-            this.props.requestTaggedMemes(tag, lastMemeId);
-          }
+    if (document.documentElement.offsetHeight === (document.documentElement.scrollTop + window.innerHeight)) {
+      if(this.props.memes.length !== 0){
+        const tag = this.props.params.tags;
+        const hotOrFresh = this.props.location.pathname;
+        const lastMemeId = parseInt(Object.keys(this.props.memes[this.props.memes.length-1])[0]);
+        if(tag === undefined){
+          this.props.requestAllMemes(hotOrFresh, lastMemeId);
+        } else {
+          this.props.requestTaggedMemes(tag, lastMemeId);
         }
       }
+    }
   }
 
   // matchTags(arr, tags){

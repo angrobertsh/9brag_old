@@ -1,4 +1,4 @@
-class Tagname < ActiveRecord::Base
+class Tagname < ApplicationRecord
   validates :tagname, presence: true
 
   has_many :tags, inverse_of: :tagname

@@ -1,4 +1,4 @@
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
   validates :user_id, :meme_id, :body, presence: true
 
   belongs_to :user

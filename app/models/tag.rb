@@ -1,4 +1,4 @@
-class Tag < ActiveRecord::Base
+class Tag < ApplicationRecord
   validates :tagname, :meme, presence: true
   validates :tagname_id, uniqueness: { scope: :meme_id }
 
