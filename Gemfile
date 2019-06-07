@@ -12,6 +12,7 @@ gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 # See https://github.com/rails/execjs#readme for more supported runtimes
+gem 'coffee-rails'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
